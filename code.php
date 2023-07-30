@@ -27,8 +27,15 @@
             $mail->addAddress($email,$name);
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Welecom To My Website';
-            $mail->Body    = '<p> This is the Verifecation Link<b><a href="http://localhost/coursephp/P1/Sliding/?Verification=">"http://localhost/coursephp/P1/Sliding/?Verification="</a></b></p>';
+            $mail->Subject = 'Email verification System';
+            $mail_template = "
+                <h2> You have registered with XYZ Company </h2>
+                <h5> Verify Your email address to Login with the below given link</h5>
+                <br/> <br/>
+                <a href='http://localhost/login-register-email-verification/verify-email.php?token=$verify_token'>Click Here to Verify</a>
+
+            ";
+            $mail->Body =$mail_template;
 
             $mail->send();
             echo 'Message has been sent';

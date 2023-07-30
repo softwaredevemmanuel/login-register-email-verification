@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="alert">
+                <div class="alert alert-success">
                     <?php
                         if(isset($_SESSION['status'])){
                             echo "<h4>" .$_SESSION['status'], "</h4>";
