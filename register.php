@@ -1,4 +1,6 @@
 <?php 
+    session_start();
+
     $page_title = "Register Page";
     include('include/header.php');
     include('include/navbar.php');
@@ -8,6 +10,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <div class="alert">
+                    <?php
+                        if(isset($_SESSION['status'])){
+                            echo "<h4>" .$_SESSION['status'], "</h4>";
+                            unset($_SESSION['status']);
+                        }
+                    ?>
+                </div>
                 <div class="card shadow">
                     <div class="card-header">
                         <h5>Registration Form</h5>
